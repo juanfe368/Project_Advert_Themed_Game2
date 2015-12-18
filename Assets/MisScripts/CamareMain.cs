@@ -9,8 +9,8 @@ public class CamareMain : MonoBehaviour
 	public float ySmooth = 8f;		// How smoothly the camera catches up with it's target movement in the y axis.
 	public Vector2 maxXAndY;		// The maximum x and y coordinates the camera can have.
 	public Vector2 minXAndY;		// The minimum x and y coordinates the camera can have.
-    public float initialX;
-    public float initialY;
+    public float initialX;			// Se inicializan en cero por interfaz
+    public float initialY;			// Se inicializan en cero por interfaz
 	
 	
 	private Transform player;		// Reference to the player's transform.
@@ -40,11 +40,16 @@ public class CamareMain : MonoBehaviour
 	
 	void FixedUpdate ()
 	{
-		maxXAndY.x = player.position.x;
+		SeguirPersonaje();
 		TrackPlayer();
 	}
 	
-	
+	void SeguirPersonaje()
+	{
+		maxXAndY.x = player.position.x;
+		//transform.position = new Vector3(player.position.x+ initialX, player.position.y+ initialY, transform.position.z);
+	}
+
 	void TrackPlayer ()
 	{
 		// By default the target x and y coordinates of the camera are it's current x and y coordinates.
