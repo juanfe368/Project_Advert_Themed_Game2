@@ -31,8 +31,8 @@ public class MovePlayer : MonoBehaviour
 		anim = GetComponent<Animator>();
 	}
 	
-	
-	void Update()
+	//SE MUEVE AL FIXEDUPDATE
+	/*void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
@@ -40,12 +40,19 @@ public class MovePlayer : MonoBehaviour
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if(Input.GetButtonDown("Jump") && grounded)
 			jump = true;
-	}
+	}*/
 	
 	
 	void FixedUpdate ()
 	{
+
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 		
+		// If the jump button is pressed and the player is grounded then the player should jump.
+		if (Input.GetButtonDown ("Jump") && grounded) {
+			jump = true;
+		}
+
 		// Cache the horizontal input.
         float h = 1;//Input.GetAxis("Horizontal");
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
