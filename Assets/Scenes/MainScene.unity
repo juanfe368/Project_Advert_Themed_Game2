@@ -128,7 +128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 721503294}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &70589860
 Prefab:
   m_ObjectHideFlags: 0
@@ -171,16 +171,20 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a8ea124c4753c546a40ee2cce05b2cf, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &73881164
+--- !u!1001 &111365735
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 721503294}
+    m_TransformParent: {fileID: 992586861}
     m_Modifications:
+    - target: {fileID: 11495060, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 478130, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 478130, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
       propertyPath: m_LocalPosition.y
@@ -208,27 +212,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478130, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
       propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495060, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
-      propertyPath: spawnDelay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495060, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
-      propertyPath: velocidadGenerador
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 126686, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: Enemyslvl1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495060, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
+      propertyPath: enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 100006, guid: 66fe2da2077f94183ae003dde85a8b1a, type: 2}
+    - target: {fileID: 11495060, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
+      propertyPath: spawnTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &73881165 stripped
+--- !u!4 &111365736 stripped
 Transform:
   m_PrefabParentObject: {fileID: 478130, guid: 3268793272a62db49a3647ea5d921a28, type: 2}
-  m_PrefabInternal: {fileID: 73881164}
+  m_PrefabInternal: {fileID: 111365735}
 --- !u!1001 &380636570
 Prefab:
   m_ObjectHideFlags: 0
@@ -416,6 +420,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: ed5592612cca943c4ab5a2773166e924, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed5592612cca943c4ab5a2773166e924, type: 2}
   m_IsPrefabParent: 0
@@ -444,12 +452,39 @@ Transform:
   m_LocalPosition: {x: 0, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1211147385}
   - {fileID: 2007582408}
   - {fileID: 15950483}
-  - {fileID: 73881165}
+  - {fileID: 799363710}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &799363709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 799363710}
+  m_Layer: 0
+  m_Name: OleadasEnemys
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799363710
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799363709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 992586861}
+  m_Father: {fileID: 721503294}
+  m_RootOrder: 2
 --- !u!1001 &806020546
 Prefab:
   m_ObjectHideFlags: 0
@@ -492,6 +527,35 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc17612bc816d4f859110958e22d0a82, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &992586860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 992586861}
+  m_Layer: 0
+  m_Name: OleadaEnemys1
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &992586861
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 992586860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1211147385}
+  - {fileID: 111365736}
+  m_Father: {fileID: 799363710}
+  m_RootOrder: 0
 --- !u!1001 &1123351414
 Prefab:
   m_ObjectHideFlags: 0
@@ -557,10 +621,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1211147384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10.8100004, z: 10}
+  m_LocalPosition: {x: 0, y: -5.81000042, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 721503294}
+  m_Father: {fileID: 992586861}
   m_RootOrder: 0
 --- !u!114 &1211147386
 MonoBehaviour:
@@ -575,10 +639,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrayVehiculos:
   - {fileID: 144028, guid: 60c3619352e514534bbfe09d8edca5c1, type: 2}
+  - {fileID: 120258, guid: c5496f990a7464032a791faf15a613d0, type: 2}
   velocidadGeneradorCarro: 10
   tiempoInicial: 1
   tiempoConstante: 2
-  posicionCarro: 0
 --- !u!1001 &1324058304
 Prefab:
   m_ObjectHideFlags: 0
@@ -680,4 +744,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 721503294}
-  m_RootOrder: 1
+  m_RootOrder: 0

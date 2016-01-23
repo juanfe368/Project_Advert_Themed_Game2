@@ -7,10 +7,9 @@ public class GeneradorVehiculos : MonoBehaviour {
 	public float velocidadGeneradorCarro = 5f;
 	public float tiempoInicial = 1f;
 	public float tiempoConstante = 2f;
-	public int posicionCarro;
+	private int posicionCarro;
 	// Use this for initialization
 	void Start () {
-		posicionCarro = 0;//Random.Range (0, 0);
 		InvokeRepeating("InvocarCars",tiempoInicial,tiempoConstante);
 	}
 	
@@ -24,6 +23,8 @@ public class GeneradorVehiculos : MonoBehaviour {
 	}
 
 	void InvocarCars(){
+        posicionCarro = Random.Range (0, 2);
+        Debug.Log("VEHICULO ALEATORIO: "+posicionCarro);
 		Instantiate(arrayVehiculos[posicionCarro],new Vector3(transform.position.x,transform.position.y+2,transform.position.z),Quaternion.identity);
 	}
 }
